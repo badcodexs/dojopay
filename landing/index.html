@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DojoPay | Automatiza tu Academia con IA en WhatsApp</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <meta name="description" content="DojoPay es el asistente de WhatsApp que se integra a tu software de gestión, responde dudas 24/7 y aprueba transferencias sin que tú muevas un dedo.">
+    <meta name="keywords" content="asistente whatsapp, cobrar por whatsapp, crosshero, box magico, software de gestion, academias de artes marciales, gimnasios, bot de ventas, automatizar cobros, inteligencia artificial, atención al cliente 24/7, dojo, canchas de futbol, clubes de padel, reservas, agendar horas">
+    <meta name="author" content="DojoPay">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DojoPay | Automatiza tu Academia">
+    <meta property="og:description" content="Atiende alumnos y cobra por WhatsApp en piloto automático con nuestro asistente inteligente.">
+    <meta property="og:image" content="https://dojopay.com/assets/og-image.jpg">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2325D366' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='18' height='18' rx='4'/><path d='M8 12L11 15L16 9'/></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1160685863194093');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1160685863194093&ev=PageView&noscript=1"
+    /></noscript>
+
+</head>
+<body>
+    <nav class="navbar dark-nav">
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="3" width="18" height="18" rx="4" stroke="#25D366" stroke-width="2"/>
+                <path d="M8 12L11 15L16 9" stroke="#25D366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            DojoPay
+        </div>
+        <div class="nav-links">
+            <a href="#problemas">El Problema</a>
+            <a href="#solucion">La Solución</a>
+            <a href="#precio">Precios</a>
+            <a href="#faq">FAQ</a>
+        </div>
+        <a href="https://wa.me/56900000000?text=Hola,%20quiero%20agendar%20una%20demo%20de%20DojoPay" target="_blank" class="btn-whatsapp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Agendar Demo por WhatsApp
+        </a>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1>Automatiza tu Academia:<br>Atiende alumnos y cobra por <span class="highlight">WhatsApp</span> en <span class="highlight">piloto automático</span>.</h1>
+            <p>El primer asistente que se integra a tu software de gestión, responde dudas 24/7 y aprueba comprobantes de transferencia sin que tú muevas un dedo.</p>
+            <a href="https://wa.me/56900000000?text=Hola,%20quiero%20empezar%20a%20usar%20DojoPay" target="_blank" class="btn-whatsapp btn-large">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                Agendar Demo por WhatsApp
+            </a>
+        </div>
+        
+        <div class="hero-visual">
+            <div class="phone-container">
+                <div class="phone-frame">
+                    <div class="phone-buttons"></div>
+                    <div class="dynamic-island"></div>
+                    <div class="wsp-app">
+                        <div class="wsp-header-ios">
+                            <div class="wsp-back">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007AFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                                <span>131</span>
+                            </div>
+                            <div class="wsp-title-ios">
+                                <div class="wsp-avatar-ios">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="#a0825e"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                </div>
+                                <span class="wsp-name-ios">DojoPay</span>
+                            </div>
+                            <div class="wsp-header-right-ios"></div>
+                        </div>
+                        
+                        <div class="wsp-chat-area-ios" id="chatContainer">
+                        </div>
+                        
+                        <div class="wsp-input-area-ios" id="inputArea">
+                            <div id="defaultInput" style="display:flex; width:100%; align-items:center; gap:0.8rem;">
+                                <svg class="icon-plus" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#007AFF" stroke-width="1.5"><path d="M12 5v14M5 12h14"/></svg>
+                                <div class="wsp-input-pill-ios">
+                                    <span class="placeholder" id="inputText"></span>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#8e8e93" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="4" ry="4"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+                                </div>
+                                <div id="defaultIcons" style="display:flex; gap:0.8rem;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007AFF" stroke-width="1.5"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#007AFF" stroke-width="1.5"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg>
+                                </div>
+                                <div id="typingIcons" style="display:none;">
+                                    <div style="width:32px; height:32px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center; margin-left: 0.4rem;">
+                                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="recordingInput" style="display:none; width:100%; align-items:center; justify-content:space-between; padding: 0 0.5rem;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8e8e93" stroke-width="1.5"><path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                                <div style="display:flex; align-items:center; gap: 8px;">
+                                    <div style="width:12px; height:12px; background:#ff3b30; border-radius:50%; animation: pulse 1s infinite;"></div>
+                                    <span id="recordTimer" style="font-size: 1.1rem; font-variant-numeric: tabular-nums;">0:00</span>
+                                </div>
+                                <div style="width:32px; height:32px; background:#25D366; border-radius:50%; display:flex; align-items:center; justify-content:center;">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ios-keyboard" id="iosKeyboard">
+                            <div class="kb-row">
+                                <div class="kb-key">q</div><div class="kb-key">w</div><div class="kb-key">e</div><div class="kb-key">r</div><div class="kb-key">t</div><div class="kb-key">y</div><div class="kb-key">u</div><div class="kb-key">i</div><div class="kb-key">o</div><div class="kb-key">p</div>
+                            </div>
+                            <div class="kb-row" style="padding: 0 16px;">
+                                <div class="kb-key">a</div><div class="kb-key">s</div><div class="kb-key">d</div><div class="kb-key">f</div><div class="kb-key">g</div><div class="kb-key">h</div><div class="kb-key">j</div><div class="kb-key">k</div><div class="kb-key">l</div><div class="kb-key">ñ</div>
+                            </div>
+                            <div class="kb-row" style="padding: 0 2px;">
+                                <div class="kb-key special" style="flex: 1.3">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+                                </div>
+                                <div class="kb-key">z</div><div class="kb-key">x</div><div class="kb-key">c</div><div class="kb-key">v</div><div class="kb-key">b</div><div class="kb-key">n</div><div class="kb-key">m</div>
+                                <div class="kb-key special" style="flex: 1.3">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"></path><line x1="18" y1="9" x2="12" y2="15"></line><line x1="12" y1="9" x2="18" y2="15"></line></svg>
+                                </div>
+                            </div>
+                            <div class="kb-row" style="padding: 0 2px;">
+                                <div class="kb-key special" style="flex: 1.3; font-size: 0.95rem;">123</div>
+                                <div class="kb-key special" style="flex: 1.3">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+                                </div>
+                                <div class="kb-key space" style="flex: 5; justify-content: flex-end; padding-right: 15px;">
+                                    <span style="font-size: 0.75rem; color: #a0a4aa; font-weight: 700;">ES</span>
+                                </div>
+                                <div class="kb-key special" style="flex: 2.2">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10l-5 5 5 5"></path><path d="M20 4v7a4 4 0 0 1-4 4H4"></path></svg>
+                                </div>
+                            </div>
+                            <div class="kb-bottom-bar" style="display: flex; justify-content: space-between; padding: 18px 26px 10px 26px;">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="pain-points" id="problemas">
+        <h2>¿Cansado de ser el secretario de tu propio negocio?</h2>
+        <div class="pain-grid">
+            <div class="pain-card">
+                <h3 class="pain-title"><span class="cross">❌</span> <span>Mensajes a las 11 PM</span></h3>
+                <p>Alumnos preguntando los horarios y precios de siempre cuando tú intentas descansar.</p>
+            </div>
+            <div class="pain-card">
+                <h3 class="pain-title"><span class="cross">❌</span> <span>Cobranza manual</span></h3>
+                <p>Revisar el banco a mano cada vez que te mandan el pantallazo de una transferencia.</p>
+            </div>
+            <div class="pain-card">
+                <h3 class="pain-title"><span class="cross">❌</span> <span>El Doble Trabajo</span></h3>
+                <p>Pasar horas traspasando datos de WhatsApp a tu Excel o sistema de gestión. Un desgaste administrativo total.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="solution-bento" id="solucion">
+        <div class="bento-grid">
+            <div class="bento-col">
+                <div class="bento-text-block">
+                    <h3>Cierre de Ventas<br>24/7.</h3>
+                    <p>Si un prospecto escribe a las 2 AM, el bot responde al instante y agenda su clase de prueba. Convierte leads en alumnos mientras duermes.</p>
+                </div>
+                <div class="bento-image-card">
+                    <img src="assets/robot_ai.jpg" alt="AI Robot" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="bento-text-block">
+                    <h3>Conexión Real con<br>tu Sistema Actual.</h3>
+                    <p>Se acabó el doble trabajo. Cuando el asistente valida el pago, actualiza automáticamente tu plataforma actual y deja al alumno con su cuota al día.</p>
+                </div>
+            </div>
+            
+            <div class="bento-col">
+                <div class="bento-image-card" style="height: 320px;">
+                    <img src="assets/phone_whatsapp.jpg" alt="WhatsApp Sync" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="bento-text-block">
+                    <h3>0% Comisiones por<br>Transferencia.</h3>
+                    <p>Ahórrate el 4% de las pasarelas de pago. El asistente lee los comprobantes por WhatsApp y aprueba el pago gratis al instante.</p>
+                </div>
+                <div class="bento-image-card">
+                    <img src="assets/sync_db.jpg" alt="Database Sync" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section" id="precio">
+        <div class="pricing-card">
+            <div style="background:#25D366; color:white; font-weight:bold; font-size:0.85rem; padding:6px 14px; border-radius:20px; display:inline-block; margin-bottom:1.5rem; text-transform:uppercase; letter-spacing:1px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);">Sólo 50 Cupos Disponibles</div>
+            <h3>Plan Fundador</h3>
+            <div class="price"><span>$</span>35.000 <span>/ mes</span></div>
+            <p class="price-sub">(Precio congelado de por vida para primeros usuarios)</p>
+            <ul class="features-list">
+                <li><span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 12L11 15L16 9"/></svg></span> Configuración de "Cerebro" (Horarios, Precios, FAQs).</li>
+                <li><span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 12L11 15L16 9"/></svg></span> Integración lectura/escritura con sistema de gestión.</li>
+                <li><span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 12L11 15L16 9"/></svg></span> Validación de transferencias bancarias a $0 costo.</li>
+                <li><span class="check"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#25D366" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 12L11 15L16 9"/></svg></span> Número de WhatsApp Business exclusivo o migración del tuyo.</li>
+            </ul>
+            <a href="https://wa.me/56900000000?text=Hola,%20quiero%20reservar%20uno%20de%20los%20cupos%20del%20Plan%20Fundador%20de%20DojoPay" target="_blank" class="btn-whatsapp btn-full">Reservar mi Cupo Fundador</a>
+        </div>
+    </section>
+
+    <section class="faq-section" id="faq">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">¿Tengo que saber programar? <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></div>
+                <div class="faq-answer"><p>No, ¡para nada! Nosotros nos encargamos de todo el setup. Solo necesitamos conectarnos a tu WhatsApp Business y a tu software actual (como CrossHero) y el asistente empieza a trabajar automáticamente.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Qué pasa con mi número actual? <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></div>
+                <div class="faq-answer"><p>Puedes mantener tu número de siempre si lo migramos a WhatsApp Cloud API (nosotros te ayudamos), o podemos asignarte un número nuevo y oficial exclusivamente para el asistente.</p></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">¿Qué pasa si un comprobante de transferencia es falso? <span class="faq-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></span></div>
+                <div class="faq-answer"><p>Nuestra IA está entrenada para validar datos clave (fecha, monto, cuenta de destino). Si nota alguna irregularidad (como fechas alteradas o montos incorrectos), no lo aprueba y te envía una alerta para que lo revises manualmente.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo" style="display:flex; justify-content:center; align-items:center;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right:4px;">
+                    <rect x="3" y="3" width="18" height="18" rx="4" stroke="#25D366" stroke-width="2"/>
+                    <path d="M8 12L11 15L16 9" stroke="#25D366" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                DojoPay
+            </div>
+            <div class="footer-links" style="display:flex; gap:1.5rem; flex-wrap:wrap; justify-content:center; margin: 1.5rem 0;">
+                <a href="terminos.html">Términos y Condiciones</a>
+                <a href="privacidad.html">Política de Privacidad</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 DojoPay - Un servicio para academias de alto rendimiento.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', () => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+        const chatContainer = document.getElementById('chatContainer');
+        
+        const messages = [
+            { type: 'user', text: 'Hola, ¿Qué clases de MMA tienen esta semana?', delay: 1000 },
+            { type: 'assistant', text: '¡Hola! 👋 Qué bueno que nos escribes.\n\nAquí están nuestros horarios de *MMA*:\n📅 Lunes: 19:00 - 20:30\n📅 Miércoles: 19:00 - 20:30\n📅 Viernes: 19:00 - 20:30\n\n¿Te gustaría venir a una clase de prueba gratuita? 🥊', delay: 2000, isTyping: true },
+            { type: 'user', text: 'Me sirve el Lunes! Quedan cupos?', delay: 1500 },
+            { type: 'assistant', text: '¡Sí! Tenemos 3 cupos disponibles para el Lunes a las 19:00. Te he dejado anotado.\n\nPor favor dime tu nombre completo para el registro. 🥋', delay: 2000, isTyping: true },
+            
+            { type: 'sys', text: '— Cambio de Vista: Dueño de Academia —' },
+            { type: 'user', text: 'Dime cómo vamos hoy con los pagos', delay: 2000 },
+            { type: 'assistant', text: '📊 *Reporte Diario (Hoy)*\n\n• Mensualidades pagadas: 12 ($420.000)\n• Alumnos nuevos inscritos: 3\n• Clases de prueba agendadas: 2\n\n¿Necesitas el detalle por profesor?', delay: 2000, isTyping: true },
+            { type: 'user', text: 'No, sácame la lista de los atrasados con este mes.', delay: 1500 },
+            { type: 'assistant', text: '⏳ Revisando registros...\n\nTienes *5 alumnos* con mensualidad atrasada:\n\n1. Carlos Mendoza (+56 9 1234 5678)\n2. Sofia Vargas (+56 9 2345 6789)\n3. Luis Torres (+56 9 3456 7890)\n4. Ana Gómez (+56 9 4567 8901)\n5. Pedro Salas (+56 9 5678 9012)\n\n¿Quieres que les envíe recordatorio de cobro ahora mismo?', delay: 2000, isTyping: true },
+            { type: 'user_audio', duration: '0:06', delay: 1000 },
+            { type: 'assistant', text: '✅ Entendido. Acabo de registrar el pago en efectivo de Carlos Mendoza y Ana Gómez, ya están al día y fuera de la lista.\n\n¿Quieres que le envíe el mensaje de cobro a los 3 que restan?', delay: 3500, isTyping: true }
+        ];
+
+        let currentIndex = 0;
+        let currentAnimationId = 0;
+
+        function typeMessageEffect(text, animId, callback) {
+            const keyboard = document.getElementById('iosKeyboard');
+            const inputSpan = document.getElementById('inputText');
+            const defaultIcons = document.getElementById('defaultIcons');
+            const typingIcons = document.getElementById('typingIcons');
+            
+            keyboard.classList.add('show');
+            inputSpan.textContent = '';
+            inputSpan.style.color = '#000';
+            inputSpan.classList.add('typing');
+            
+            defaultIcons.style.display = 'none';
+            typingIcons.style.display = 'block';
+            
+            const keys = document.querySelectorAll('.kb-key:not(.special):not(.space)');
+            const spaceKey = document.querySelector('.kb-key.space');
+            
+            let i = 0;
+            
+            function typeNextChar() {
+                if (animId !== currentAnimationId) return;
+                
+                if (i >= text.length) {
+                    setTimeout(() => {
+                        if (animId !== currentAnimationId) return;
+                        keyboard.classList.remove('show');
+                        inputSpan.textContent = '';
+                        defaultIcons.style.display = 'flex';
+                        typingIcons.style.display = 'none';
+                        inputSpan.classList.remove('typing');
+                        callback();
+                    }, 400);
+                    return;
+                }
+
+                const char = text.charAt(i);
+                let targetKey = null;
+                
+                if (char === ' ') {
+                    targetKey = spaceKey;
+                } else {
+                    const charLower = char.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                    targetKey = Array.from(keys).find(k => k.textContent.trim().toLowerCase() === charLower);
+                }
+                
+                if (!targetKey && char !== ' ') {
+                    targetKey = keys[Math.floor(Math.random() * keys.length)];
+                }
+                
+                if (targetKey) {
+                    targetKey.classList.remove('pressed');
+                    void targetKey.offsetWidth;
+                    targetKey.classList.add('pressed');
+                    
+                    setTimeout(() => {
+                        if(targetKey) targetKey.classList.remove('pressed');
+                    }, 80);
+                }
+                
+                inputSpan.textContent += char;
+                i++;
+                
+                const delay = Math.random() * 70 + 50; 
+                setTimeout(typeNextChar, delay);
+            }
+            
+            setTimeout(typeNextChar, 500);
+        }
+
+        function recordAudioEffect(durationSec, animId, callback) {
+            const defaultInput = document.getElementById('defaultInput');
+            const recordingInput = document.getElementById('recordingInput');
+            const recordTimer = document.getElementById('recordTimer');
+            
+            defaultInput.style.display = 'none';
+            recordingInput.style.display = 'flex';
+            
+            let seconds = 0;
+            recordTimer.textContent = `0:00`;
+            
+            setTimeout(() => {
+                if (animId !== currentAnimationId) return;
+                const recordInterval = setInterval(() => {
+                    if (animId !== currentAnimationId) {
+                        clearInterval(recordInterval);
+                        return;
+                    }
+                    seconds++;
+                    recordTimer.textContent = `0:0${seconds}`;
+                    if (seconds >= durationSec) {
+                        clearInterval(recordInterval);
+                        setTimeout(() => {
+                            if (animId !== currentAnimationId) return;
+                            recordingInput.style.display = 'none';
+                            defaultInput.style.display = 'flex';
+                            callback();
+                        }, 400);
+                    }
+                }, 1000);
+            }, 500);
+        }
+
+        function addMessage(msg) {
+            const isUser = msg.type === 'user' || msg.type === 'user_audio';
+            const bubbleDiv = document.createElement('div');
+            bubbleDiv.className = `wsp-msg-row ${isUser ? 'msg-user' : 'msg-bot'}`;
+            
+            let contentHtml = '';
+            const time = new Date().toLocaleTimeString('en-US', {hour: 'numeric', minute:'2-digit'});
+            const doubleTick = '<svg class="tick" width="16" height="15" viewBox="0 0 16 15"><path fill="#53bdeb" d="M15.01 3.316l-.478-.372a.365.365 0 0 0-.51.063L8.666 9.879a.32.32 0 0 1-.484.033l-.358-.325a.319.319 0 0 0-.484.032l-.378.483a.418.418 0 0 0 .036.541l1.32 1.266c.143.14.361.125.484-.033l6.272-8.048a.366.366 0 0 0-.064-.512zm-4.1 0l-.478-.372a.365.365 0 0 0-.51.063L4.566 9.879a.32.32 0 0 1-.484.033L1.891 7.769a.366.366 0 0 0-.515.006l-.423.433a.364.364 0 0 0 .006.514l3.258 3.185c.143.14.361.125.484-.033l6.272-8.048a.365.365 0 0 0-.063-.51z"/></svg>';
+            const bgClass = isUser ? 'bg-out' : 'bg-in';
+            const ticks = isUser ? doubleTick : '';
+
+            if (msg.type === 'sys') {
+                bubbleDiv.style.justifyContent = 'center';
+                contentHtml = `<div class="wsp-sys-msg">${msg.text}</div>`;
+            } else {
+                if (msg.isTypingIndicator) {
+                    contentHtml = `
+                        <div class="wsp-bubble-ios ${bgClass}">
+                            <div class="typing-indicator"><span></span><span></span><span></span></div>
+                        </div>
+                    `;
+                } else if (msg.type === 'user_audio') {
+                    let waveformHtml = '';
+                    for(let i=0; i<15; i++) {
+                        let h = Math.floor(Math.random() * 12) + 4;
+                        waveformHtml += `<div style="width:2px; height:${h}px; background:#8fa89b; border-radius:2px;"></div>`;
+                    }
+                    
+                    contentHtml = `
+                        <div class="wsp-bubble-ios ${bgClass}" style="width: 270px; padding: 4px; padding-bottom: 22px;">
+                            <div style="display: flex; align-items: center; gap: 8px; padding: 4px;">
+                                <div style="position: relative; flex-shrink: 0;">
+                                    <div style="width:40px; height:40px; border-radius:50%; background:#d1d5db; display:flex; justify-content:center; align-items:center; overflow:hidden;">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                    </div>
+                                    <div style="position:absolute; right:-2px; bottom:-2px; background:#25D366; border-radius:50%; width:16px; height:16px; display:flex; align-items:center; justify-content:center; border: 2px solid #e7ffdb;">
+                                        <svg width="10" height="10" fill="#fff" viewBox="0 0 24 24"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/></svg>
+                                    </div>
+                                </div>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#54656f" style="flex-shrink:0;"><path d="M8 5v14l11-7z"/></svg>
+                                <div style="flex:1; display:flex; align-items:center; gap:4px;">
+                                    <div style="width:10px; height:10px; background:#25D366; border-radius:50%; flex-shrink:0;"></div>
+                                    <div style="flex:1; display:flex; align-items:center; gap:2px; height:20px;">
+                                        <div style="width: 20px; border-bottom: 2px dotted #8fa89b; margin-right: 2px;"></div>
+                                        ${waveformHtml}
+                                    </div>
+                                </div>
+                            </div>
+                            <span style="position:absolute; bottom:4px; left:64px; font-size:0.7rem; color:#667781;">${msg.duration}</span>
+                            <span class="wsp-time-ios" style="position:absolute; bottom:4px; right:8px; margin:0;">${time} ${ticks}</span>
+                        </div>
+                    `;
+                } else {
+                    const formattedText = msg.text.replace(/\*(.*?)\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+                    contentHtml = `
+                        <div class="wsp-bubble-ios ${bgClass}">
+                            <div class="wsp-text-ios">${formattedText}</div>
+                            <span class="wsp-time-ios">${time} ${ticks}</span>
+                        </div>
+                    `;
+                }
+            }
+
+            bubbleDiv.innerHTML = contentHtml;
+            chatContainer.appendChild(bubbleDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+            return bubbleDiv;
+        }
+
+        function runChatSequence(animId) {
+            if (animId !== currentAnimationId) return;
+
+            if (currentIndex >= messages.length) {
+                setTimeout(() => {
+                    if (animId !== currentAnimationId) return;
+                    currentIndex = 0;
+                    chatContainer.innerHTML = '<div class="wsp-date-pill">Hoy</div>';
+                    runChatSequence(animId);
+                }, 5000);
+                return;
+            }
+
+            const msg = messages[currentIndex];
+            
+            if (msg.type === 'sys') {
+                setTimeout(() => {
+                    if (animId !== currentAnimationId) return;
+                    addMessage(msg);
+                    currentIndex++;
+                    runChatSequence(animId);
+                }, 1000);
+                return;
+            }
+
+            setTimeout(() => {
+                if (animId !== currentAnimationId) return;
+
+                if (msg.type === 'user') {
+                    typeMessageEffect(msg.text, animId, () => {
+                        if (animId !== currentAnimationId) return;
+                        addMessage(msg);
+                        currentIndex++;
+                        runChatSequence(animId);
+                    });
+                } else if (msg.type === 'user_audio') {
+                    const durationSec = parseInt(msg.duration.split(':')[1]) || 3;
+                    recordAudioEffect(durationSec, animId, () => {
+                        if (animId !== currentAnimationId) return;
+                        addMessage(msg);
+                        currentIndex++;
+                        runChatSequence(animId);
+                    });
+                } else if (msg.isTyping) {
+                    const typingBubble = addMessage({ type: 'assistant', isTypingIndicator: true });
+                    setTimeout(() => {
+                        if (animId !== currentAnimationId) return;
+                        typingBubble.remove();
+                        addMessage(msg);
+                        currentIndex++;
+                        runChatSequence(animId);
+                    }, 1800);
+                } else {
+                    addMessage(msg);
+                    currentIndex++;
+                    runChatSequence(animId);
+                }
+            }, msg.delay);
+        }
+
+        chatContainer.innerHTML = '<div class="wsp-date-pill">Hoy</div>';
+        setTimeout(() => runChatSequence(currentAnimationId), 1000);
+    </script>
+</body>
+</html>

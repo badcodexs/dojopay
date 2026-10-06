@@ -1,0 +1,8 @@
+node_modules/
+.serverless/
+.env
+dist/
+coverage/
+
+# Ignore compiled JS artifacts in src
+src/**/*.js

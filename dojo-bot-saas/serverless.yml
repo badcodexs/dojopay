@@ -1,0 +1,187 @@
+service: dojo-bot-saas
+frameworkVersion: '3'
+useDotenv: true
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs22.x
+  region: us-east-1
+  httpApi:
+    cors: true
+  environment:
+    DYNAMODB_TABLE: DojoSaaS-Table
+
+    META_ACCESS_TOKEN: ${env:WHATSAPP_ACCESS_TOKEN, ''}
+    META_VERIFY_TOKEN: ${env:META_VERIFY_TOKEN, ''}
+    META_PHONE_NUMBER_ID: ${env:WHATSAPP_PHONE_NUMBER_ID, ''}
+    META_APP_ID: '1370671278615655'
+    META_APP_SECRET: ${env:META_APP_SECRET, ''}
+    DOJOPAY_API_KEY: ${env:DOJOPAY_API_KEY, ''}
+    GOOGLE_CLIENT_EMAIL: ${env:GOOGLE_CLIENT_EMAIL, ''}
+    GOOGLE_PRIVATE_KEY: ${env:GOOGLE_PRIVATE_KEY, ''}
+    EVOLUTION_API_URL: ${env:EVOLUTION_API_URL, ''}
+    EVOLUTION_API_KEY: ${env:EVOLUTION_API_KEY, ''}
+    SALES_DEMO_TENANT_PHONES: ${env:SALES_DEMO_TENANT_PHONES, ''}
+    KMS_KEY_ID: !Ref DojoSaaSCredentialsKey
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - dynamodb:Query
+            - dynamodb:Scan
+            - dynamodb:GetItem
+            - dynamodb:PutItem
+            - dynamodb:UpdateItem
+            - dynamodb:DeleteItem
+          Resource: 
+            - "arn:aws:dynamodb:${aws:region}:*:table/DojoSaaS-Table"
+            - "arn:aws:dynamodb:${aws:region}:*:table/DojoSaaS-Table/index/ActiveTenantsIndex"
+        - Effect: Allow
+          Action:
+            - kms:Encrypt
+            - kms:Decrypt
+          Resource: !GetAtt DojoSaaSCredentialsKey.Arn
+        - Effect: Allow
+          Action:
+            - ssm:GetParameter
+          Resource: "arn:aws:ssm:${aws:region}:${aws:accountId}:parameter/dojopay/prod/jwt-secret"
+
+        - Effect: Allow
+          Action:
+            - sqs:SendMessage
+          Resource:
+            - !GetAtt DojoSaaSWebhookQueue.Arn
+        - Effect: Allow
+          Action:
+            - bedrock:InvokeModel
+            - bedrock:Converse
+          Resource: 
+            - "arn:aws:bedrock:*::foundation-model/anthropic.claude-haiku-4-5-20251001-v1:0"
+            - "arn:aws:bedrock:${aws:region}:${aws:accountId}:inference-profile/us.anthropic.claude-haiku-4-5-20251001-v1:0"
+            - "arn:aws:bedrock:*::foundation-model/amazon.nova-lite-v1:0"
+            - "arn:aws:bedrock:${aws:region}:${aws:accountId}:inference-profile/us.amazon.nova-lite-v1:0"
+        - Effect: Allow
+          Action:
+            - transcribe:StartStreamTranscription
+          Resource: "*"
+
+functions:
+  apiLogin:
+    handler: src/handlers/api-login.handler
+    memorySize: 128
+    timeout: 10
+    events:
+      - httpApi:
+          path: /api/auth/login
+          method: post
+
+  apiMetaAuth:
+    handler: src/handlers/api-meta-auth.handler
+    memorySize: 128
+    timeout: 10
+    events:
+      - httpApi:
+          path: /api/meta/callback
+          method: post
+
+  verify:
+    handler: src/handlers/verify.handler
+    memorySize: 128
+    timeout: 29
+    events:
+      - httpApi:
+          path: /webhook
+          method: get
+
+  webhook:
+    handler: src/handlers/webhook.handler
+    memorySize: 256
+    timeout: 29
+    environment:
+      SQS_QUEUE_URL: !Ref DojoSaaSWebhookQueue
+    events:
+      - httpApi:
+          path: /webhook
+          method: post
+
+  worker:
+    handler: src/handlers/worker.handler
+    memorySize: 256
+    timeout: 60
+    events:
+      - sqs:
+          arn: !GetAtt DojoSaaSWebhookQueue.Arn
+          batchSize: 1
+
+  configTenant:
+    handler: src/handlers/config-tenant.handler
+    memorySize: 128
+    timeout: 29
+    events:
+      - httpApi:
+          path: /api/clientes/config
+          method: post
+
+  cronReminders:
+    handler: src/handlers/cron-reminders.handler
+    memorySize: 128
+    timeout: 29
+    events:
+      - schedule:
+          rate: cron(0 12 * * ? *)
+          enabled: true
+
+resources:
+  Resources:
+    DojoSaaSWebhookQueue:
+      Type: AWS::SQS::Queue
+      Properties:
+        QueueName: DojoSaaSWebhookQueue-${sls:stage}
+        VisibilityTimeout: 120
+        
+    DojoSaaSCredentialsKey:
+      Type: AWS::KMS::Key
+      Properties:
+        Description: "Key to encrypt DojoBot SaaS third-party credentials"
+        Enabled: true
+        EnableKeyRotation: true
+        KeyPolicy:
+          Version: "2012-10-17"
+          Id: "key-default-1"
+          Statement:
+            - Sid: "Enable IAM User Permissions"
+              Effect: Allow
+              Principal:
+                AWS: "arn:aws:iam::${aws:accountId}:root"
+              Action: "kms:*"
+              Resource: "*"
+
+    DojoSaaSTable:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        TableName: DojoSaaS-Table
+        AttributeDefinitions:
+          - AttributeName: PK
+            AttributeType: S
+          - AttributeName: SK
+            AttributeType: S
+          - AttributeName: cronStatus
+            AttributeType: S
+        KeySchema:
+          - AttributeName: PK
+            KeyType: HASH
+          - AttributeName: SK
+            KeyType: RANGE
+        BillingMode: PAY_PER_REQUEST
+        GlobalSecondaryIndexes:
+          - IndexName: ActiveTenantsIndex
+            KeySchema:
+              - AttributeName: cronStatus
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL

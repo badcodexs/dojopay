@@ -1,0 +1,83 @@
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+env.json
+credentials.csv
+*.pem
+*.key
+*.p12
+*.crt
+secrets.json
+credentials.*
+.aws/
+
+# Dependencies and virtual environments
+node_modules/
+.pnp
+.pnp.js
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+
+# Build output and generated files
+dist/
+dist-ssr/
+build/
+coverage/
+.serverless/
+.esbuild/
+.webpack/
+.build/
+*.tsbuildinfo
+dojo-bot-saas/src/**/*.js
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+Thumbs.db
+
+# Local operational scripts and data dumps (contain tenant/customer data)
+/bucket-policy.json
+/cf-config.json
+/dist-config.json
+/just-config*.json
+/conversations.json
+/etag.txt
+/reporte_conversaciones.md
+/dojopay_propuesta_comercial.html
+/fix_*.js
+/generate_html.js
+/update-cf.js
+/dojo-bot-saas/scripts/
+/dojo-bot-saas/artifacts/
+/dojo-bot-saas/*.json
+!/dojo-bot-saas/package.json
+!/dojo-bot-saas/package-lock.json
+!/dojo-bot-saas/tsconfig.json
+/dojo-bot-saas/*.md
+/dojo-bot-saas/*.csv
+/dojo-bot-saas/*.sh
+/dojo-bot-saas/extract.ts
+/dojo-bot-saas/send_demo_msg.ts
+/dojo-bot-saas/fetch_*.ts
+/dojo-bot-saas/*.js
+
+# Meta app-review mock (simulates a successful signup)
+/landing/dashboard_meta.html

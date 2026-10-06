@@ -1,0 +1,37 @@
+{
+  "name": "dojo-bot-saas",
+  "version": "1.0.0",
+  "description": "Micro-SaaS No-UI para Academias",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "deploy": "serverless deploy"
+  },
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.0.0",
+    "@aws-sdk/client-dynamodb": "^3.0.0",
+    "@aws-sdk/client-kms": "^3.1116.0",
+    "@aws-sdk/client-sqs": "^3.1111.0",
+    "@aws-sdk/client-ssm": "^3.1126.0",
+    "@aws-sdk/client-transcribe-streaming": "^3.1110.0",
+    "@aws-sdk/lib-dynamodb": "^3.0.0",
+    "@smithy/node-http-handler": "^4.11.2",
+    "axios": "^1.6.0",
+    "bcryptjs": "^3.0.3",
+    "cheerio": "^1.2.0",
+    "exceljs": "^4.4.0",
+    "form-data": "^4.0.6",
+    "jsonwebtoken": "^9.0.3"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.130",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/form-data": "^2.2.1",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^20.0.0",
+    "serverless": "^3.38.0",
+    "serverless-offline": "^13.10.1",
+    "serverless-plugin-typescript": "^2.1.5",
+    "typescript": "^5.0.0"
+  }
+}
